@@ -1,0 +1,21 @@
+package com.Utility;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class OrangeHrmProperty 
+{
+	public static Properties loadProperty() throws IOException
+	{
+		
+		FileInputStream OrangeHrmApplicationPropertiesFile=new FileInputStream("./src/main/java/com/Config/PropertiesFile.properties");
+		
+		Properties properties=new Properties();
+		
+		properties.load(OrangeHrmApplicationPropertiesFile);
+		
+		return properties ;
+		
+	}
+}

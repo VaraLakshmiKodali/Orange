@@ -1,0 +1,66 @@
+package com.WebTable;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CompleteTable
+{
+
+	WebDriver driver;
+	String ApplicationUrl="https://www.timeanddate.com/worldclock/";
+	
+	public void applicationLaunch()
+	{
+		
+		System.setProperty("webdriver.chrome.driver", "./DriverFiles/chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get(ApplicationUrl);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().deleteAllCookies();
+		((JavascriptExecutor)driver).executeScript("window.scrollTo(0,550)");
+		
+		
+	}
+	
+	public void applicationClose()
+	{
+		
+		driver.quit();
+		
+	}
+	
+	public void tableData() throws IOException
+	{
+		
+		for(int row=0;row<36;row++)
+		{
+	
+			for(int cell=0;cell<8;cell++)
+			{
+				
+				By webTableL=By.xpath("/html/body/div[5]/section/div[1]/table/tbody/tr["+row+"]/td["+cell+"]");
+				WebElement webTable=driver.findElement(webTableL);
+				String webTableData=webTable.getText();
+				System.out.println(webTableData+" ");
+				
+			}
+			
+			System.out.println();
+			
+		}
+		
+	}
+	
+	public static void main(String[] args) throws IOException 
+	{
+		CompleteTable table=new CompleteTable();
+		table.applicationLaunch();
+		table.tableData();
+		table.applicationClose();
+	}
+}

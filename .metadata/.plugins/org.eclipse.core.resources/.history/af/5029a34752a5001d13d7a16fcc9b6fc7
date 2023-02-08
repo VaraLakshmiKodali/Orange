@@ -1,0 +1,8 @@
+package com.OrangeHrmApplicationTestDataResultsFiles;
+
+public class Snippet {
+	public static void main(String[] args) {
+		/src/main/java/com/OrangeHrmApplicationTestDataResultsFiles
+	}
+}
+

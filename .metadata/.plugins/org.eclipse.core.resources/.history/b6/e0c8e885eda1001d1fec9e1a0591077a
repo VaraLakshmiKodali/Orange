@@ -1,0 +1,62 @@
+package com.Utility;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelCommonMethods 
+{
+	
+	String excelFileInputPath;
+	String excelFileOutputPath;
+	String sheetName;
+	XSSFWorkbook workBook;
+	XSSFSheet sheet;
+	Row row;
+	Cell rowOfCell;
+	
+	public ExcelCommonMethods(String excelFileInputPath, String excelFileOutputPath, String sheetName) throws IOException
+	{
+		
+		this.excelFileInputPath=excelFileInputPath;
+		this.excelFileOutputPath=excelFileOutputPath;
+		this.sheetName=sheetName;
+		
+		FileInputStream file=new FileInputStream(excelFileInputPath);
+		workBook=new XSSFWorkbook(file);
+				
+	}
+	
+	public String getCellValue(int rowIndex, int cellIndex) throws IOException
+	{
+		
+		sheet=workBook.getSheet(sheetName);
+		row=sheet.getRow(rowIndex);
+		rowOfCell=row.createCell(cellIndex);
+		return rowOfCell.getStringCellValue();
+						
+	}
+	
+	public void setCellValue(int rowIndex, int cellIndex, String data)
+	{
+		
+		sheet=workBook.getSheet(sheetName);
+		row=sheet.getRow(rowIndex);
+		rowOfCell=row.createCell(cellIndex);
+		rowOfCell.setCellValue(data);
+		
+	}
+	
+	public void saveExcelData() throws IOException
+	{
+		
+		FileOutputStream outputStreamTestResultFile=new FileOutputStream("./src/main/java/com/OrangeHrmApplicationTestDataResultsFiles/LogInTestResultsFile");
+		workBook.write(outputStreamTestResultFile);
+		
+	}
+		
+}

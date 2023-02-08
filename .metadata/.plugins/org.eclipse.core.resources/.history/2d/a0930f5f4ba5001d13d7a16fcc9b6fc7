@@ -1,0 +1,67 @@
+# logInPanelText Element property - id locator
+logInPageLogInPanelProperty=logInPanelHeading
+
+#UserName Element property - id locator
+userNameProperty=txtUsername
+
+#Password Element Property - name locator
+passwordProperty=txtPassword
+
+#LogIn Button Element Property - className locator
+logInButtonProperty=button
+
+#Invalid Credentials Property - id 
+InvalidCredentialsProperty=spanMessage
+
+#HomePageTextData Element property - id locator
+adminProperty=menu_admin_viewAdminModule
+
+#PIM Element Property - id locator
+PIMProperty=menu_pim_viewPimModule
+
+#EmployeeList ElementLocator - id locator
+EmployeeListProperty=menu_pim_viewEmployeeList
+
+#AddEmployee Element Property - linkText locator
+AddEmployeeProperty=Add Employee
+
+#AddEmployeePageText Element Property - className locator
+AddEmployeePageTextProperty=hasTopFieldHelp
+
+
+#FirstName Element Property - id locator
+FirstNameProperty=firstName
+
+#MiddleName Element Property - id locator
+MiddleNameProperty=middleName
+
+#LastName Element Property - id locator
+LastNameProperty=lastName
+
+#Auto Generated EmployeeId Element Property - id locator
+AutoGeneraatedEmployeeIdProperty=employeeId
+
+#Save Button Element Property - id locator
+SaveButtonProperty=btnSave
+
+#PersonalDetailsPageText Element Property - className
+PersonalDetailsPageTextProperty=hasTopFieldHelp
+
+#PersonalDetailsPage Full Name Element Property - id locator
+PersonalDetailsPageFirstNameProperty=personal_txtEmpFirstName
+
+#PersonalDetailsPage Middle Name Element Property - id locator
+PersonalDetailsPageMiddleNameProperty=personal_txtEmpMiddleName
+
+#PersonalDetailsPage Last Name Element Property - id locator
+PersonalDetailsPageLastNameProperty=personal_txtEmpLastName
+
+#PersonalDetailsPage Employee ID  Element Property - id locator
+PersonalDetailsPageEmployeeIdProperty=personal_txtEmployeeId
+
+#Welcome Admin Element Property - id locator
+welcomeAdminProperty=welcome
+
+#logOut Element Property - linkText locator
+logOutProperty=Logout
+

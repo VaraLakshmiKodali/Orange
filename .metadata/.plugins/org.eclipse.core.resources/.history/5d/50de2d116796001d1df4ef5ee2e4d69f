@@ -1,0 +1,422 @@
+package com.Assignments;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AddEmployeeTest 
+{
+	public static void main(String[] args) throws IOException  
+	{
+		String ApplicationUrl="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth/login";
+		WebDriver driver;
+		System.setProperty("webdriver.edge.driver", "./DriverFiles/msedgedriver.exe");
+		driver=new EdgeDriver();
+		driver.get(ApplicationUrl);
+		
+		driver.manage().window().maximize();
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				
+		By LogInPanelL=By.id("logInPanelHeading");
+		WebElement LogInPanel=driver.findElement(LogInPanelL);
+		
+		FileInputStream File=new FileInputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+		
+		XSSFWorkbook WorkBook=new XSSFWorkbook(File);
+		
+		XSSFSheet Sheet=WorkBook.getSheet("Sheet1");
+		
+		Row Row=Sheet.getRow(1);
+		Cell RowOfCell=Row.getCell(0);
+		
+		String ExpectedLogInPanelText=RowOfCell.getStringCellValue();
+		System.out.println(ExpectedLogInPanelText);
+		
+		String ActualLogInPanelText=LogInPanel.getText();
+		Row.createCell(1).setCellValue(ActualLogInPanelText);
+		System.out.println("The Text of The LogIn Panel is :- "+ActualLogInPanelText);
+		
+		if(ActualLogInPanelText.equals(ExpectedLogInPanelText))
+		{
+			
+			System.out.println("The Text Matched - Pass");
+			Row.createCell(2).setCellValue("Pass");
+			
+			FileOutputStream File1=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File1);
+			
+		}
+		else
+		{
+			
+			System.out.println("The Text is NOT Matched - Fail");
+			Row.createCell(2).setCellValue("Fail");
+			
+			FileOutputStream File1=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File1);
+						
+		}
+		
+		String ExpectedLogInPageTitle=driver.getTitle();
+		Row.createCell(3).setCellValue(ExpectedLogInPageTitle);
+		System.out.println("The Expected LogIn Page Title is :- "+ExpectedLogInPageTitle);
+		
+		RowOfCell=Row.getCell(4);
+		String ActualLogInPageTitle=RowOfCell.getStringCellValue();
+		
+		System.out.println("The Actual LogIn Page Title is :- "+ActualLogInPageTitle);
+		if(ActualLogInPageTitle.equals(ExpectedLogInPageTitle))
+		{
+			
+			System.out.println("The Title Of The Page Matched - Pass");
+			Row.createCell(5).setCellValue("Pass");
+			
+			FileOutputStream File2=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File2);
+			
+		}
+		else
+		{
+		
+			System.out.println("The Title Of The Page NOT Matched - Fail");
+			Row.createCell(5).setCellValue("Fail");
+			
+			FileOutputStream File2=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File2);
+			
+		}
+		
+		String UserNameTestData="VaraLakshmi";
+		By UserNameL=By.id("txtUsername");
+		WebElement UserName=driver.findElement(UserNameL);
+		UserName.sendKeys(UserNameTestData);
+		Row.createCell(6).setCellValue(UserNameTestData);
+		
+		String PasswordTestData="LovelyVaram@1998";
+		By PasswordL=By.id("txtPassword");
+		WebElement Password=driver.findElement(PasswordL);
+		Password.sendKeys(PasswordTestData);
+		Row.createCell(7).setCellValue(PasswordTestData);
+		
+		By LogInL=By.className("button");
+		WebElement Login=driver.findElement(LogInL);
+		Login.click();
+		
+		//id="menu_admin_viewAdminModule"
+		
+		String ExpectedHomePageText=Row.getCell(8).getStringCellValue();
+		System.out.println("The Home Page Text is :-"+ExpectedHomePageText);
+		
+		By HomePageTextL=By.id("menu_admin_viewAdminModule");
+		WebElement HomePageText=driver.findElement(HomePageTextL);
+		String ActualHomePageText=HomePageText.getText();
+		System.out.println(ActualHomePageText);
+		Row.createCell(9).setCellValue(ActualHomePageText);
+		
+		if(ActualHomePageText.equals(ExpectedHomePageText))
+		{
+			
+			System.out.println("Home Page Text Matched - Pass");
+			Row.createCell(10).setCellValue("Pass");
+			FileOutputStream File4=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File4);
+		}
+		else
+		{
+			
+			System.out.println("Home Page Text NOT Matched - Fail");
+			Row.createCell(10).setCellValue("Fail");
+			FileOutputStream File4=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File4);
+		}
+		
+		By PIMLocator=By.id("menu_pim_viewPimModule");
+		WebElement PIM=driver.findElement(PIMLocator);
+		
+		Actions action=new Actions(driver);
+		action.moveToElement(PIM).build().perform();
+		
+		By AddEmployeeL=By.linkText("Add Employee");
+		WebDriverWait Wait=new WebDriverWait(driver, 10);
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(AddEmployeeL));
+		
+		WebElement AddEmployee=driver.findElement(AddEmployeeL);
+		AddEmployee.click();
+		
+		
+		//<label class="hasTopFieldHelp">Full Name</label>
+		
+		String ExpectedAddEmployeePageText=Row.getCell(11).getStringCellValue();
+		System.out.println(ExpectedAddEmployeePageText);
+		
+		By ActualAddEmployeePageTextL=By.className("hasTopFieldHelp");
+		WebElement ActualAddEmployeePage=driver.findElement(ActualAddEmployeePageTextL);
+		String ActualAddEmployeePageText=ActualAddEmployeePage.getText();
+		Row.createCell(12).setCellValue(ActualAddEmployeePageText);
+		
+		System.out.println(ActualAddEmployeePageText);
+		
+		if(ActualAddEmployeePageText.equals(ExpectedAddEmployeePageText))
+		{
+			
+			System.out.println("The Text Matched - Pass");
+			Row.createCell(13).setCellValue("Pass");
+			
+			FileOutputStream File5=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File5);
+						
+		}
+		else
+		{
+			
+			System.out.println("The Text is NOT Matched - Fail");
+			Row.createCell(13).setCellValue("Fail");
+			
+			FileOutputStream File6=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File6);
+			
+		}
+		
+		//id="firstName"
+		
+	
+		
+		String ExpectedFirstName1="Kodali";
+		By ExpectedFirstNameL1=By.id("firstName");
+		WebElement FirstName1=driver.findElement(ExpectedFirstNameL1);
+		FirstName1.sendKeys(ExpectedFirstName1);
+		Row.createCell(14).setCellValue(ExpectedFirstName1);
+		System.out.println(" The First Name is :- "+ExpectedFirstName1);
+		
+		String ExpectedMiddleName1="Rajini";
+		By ExpectedMiddleNameL1=By.id("middleName");
+		WebElement MiddleName1=driver.findElement(ExpectedMiddleNameL1);
+		MiddleName1.sendKeys(ExpectedMiddleName1);
+		Row.createCell(15).setCellValue(ExpectedMiddleName1);
+		System.out.println(" The Middle Name is :- "+ExpectedMiddleName1);
+
+		String ExpectedLastName1="Devi";
+		By ExpectedLastNameL1=By.id("lastName");
+		WebElement LastName1=driver.findElement(ExpectedLastNameL1);
+		LastName1.sendKeys(ExpectedLastName1);
+		Row.createCell(16).setCellValue(ExpectedLastName1);
+		System.out.println(" The Last Name is :- "+ExpectedLastName1);
+		
+		
+		By EmployeeIdL=By.id("employeeId");
+		WebElement EmployeeID1=driver.findElement(EmployeeIdL);
+		String AutoUpdatedEmployeeId=EmployeeID1.getAttribute("value");
+		Row.createCell(17).setCellValue(AutoUpdatedEmployeeId);
+		System.out.println(" Actual Employee Id :- "+AutoUpdatedEmployeeId);
+		
+		// id="btnSave" 
+		
+		By SaveL=By.id("btnSave");
+		WebElement Save=driver.findElement(SaveL);
+		Save.click();
+		//class="personalDetails"
+        //<label for="Full_Name" class="hasTopFieldHelp">Full Name</label>
+		
+		String ExpectedPersonalDetailsPageText=Row.getCell(18).getStringCellValue();
+		System.out.println(ExpectedPersonalDetailsPageText);
+		
+		By ActualPersonalDetailsPageL=By.className("hasTopFieldHelp");
+		WebElement PersonalDetailsPage=driver.findElement(ActualPersonalDetailsPageL);
+		String ActualPersonalDetailsPageText=PersonalDetailsPage.getText();
+		
+		Row.createCell(19).setCellValue(ActualPersonalDetailsPageText);
+		System.out.println(ActualPersonalDetailsPageText);
+		
+		if(ActualPersonalDetailsPageText.equals(ExpectedPersonalDetailsPageText))
+		{
+			
+			System.out.println("Text Matched - Pass");
+			Row.createCell(20).setCellValue("Pass");
+			
+			FileOutputStream File7=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File7);
+						
+		}
+		else
+		{
+			
+			System.out.println("Text NOT Matched - Fail");
+			Row.createCell(20).setCellValue("Fail");
+			
+			FileOutputStream File7=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File7);
+			
+		}
+		
+		//value="Kodali"  id="personal_txtEmpFirstName" 
+		
+		By ActualFirstNameL=By.id("personal_txtEmpFirstName");
+		WebElement ActualFirstName1=driver.findElement(ActualFirstNameL);
+		String	ActualFirstName=ActualFirstName1.getAttribute("value");
+		Row.createCell(21).setCellValue(ActualFirstName);
+		System.out.println("The Actual First Name is :- "+ActualFirstName);
+		if(ActualFirstName.equals(ExpectedFirstName1))
+		{
+			
+			System.out.println("The Expected First Name is Matched - Pass");
+			Row.createCell(22).setCellValue("Pass");
+			
+			FileOutputStream File8=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File8);
+			
+		}
+		else
+		{
+			
+			System.out.println("The Expected First Name is NOT Matched - Fail");
+			Row.getCell(22).setCellValue("Fail");
+			
+			FileOutputStream File8=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File8);
+						
+		}
+		
+		By ActualMiddleNameL=By.id("personal_txtEmpMiddleName");
+		WebElement ActualMiddleName1=driver.findElement(ActualMiddleNameL);
+		String	ActualMiddleName=ActualMiddleName1.getAttribute("value");
+		Row.createCell(23).setCellValue(ActualMiddleName);
+		System.out.println("The Actual Middle Name is :- "+ActualMiddleName);
+		
+		if(ActualMiddleName.equals(ExpectedMiddleName1))
+		{
+			
+			System.out.println("The Actual Middle Name is Matched - Pass");
+			Row.createCell(24).setCellValue("Pass");
+			
+			FileOutputStream File8=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File8);
+			
+		}
+		else
+		{
+			
+			System.out.println("The Middle Name is NOT Matched - Fail");
+			Row.getCell(24).setCellValue("Fail");
+			
+			FileOutputStream File8=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File8);
+						
+		}
+		
+		By ActualLastNameL=By.id("personal_txtEmpLastName");
+		WebElement ActualLastName1=driver.findElement(ActualLastNameL);
+		String	ActualLastName=ActualLastName1.getAttribute("value");
+		Row.createCell(25).setCellValue(ActualLastName);
+		System.out.println("The Actual Last Name is :- "+ActualLastName);
+		
+		if(ActualLastName.equals(ExpectedLastName1))
+		{
+			
+			System.out.println("The Last Name is Matched - Pass");
+			Row.createCell(26).setCellValue("Pass");
+			
+			FileOutputStream File8=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File8);
+			
+		}
+		else
+		{
+			
+			System.out.println("The Last Name is NOT Matched - Fail");
+			Row.getCell(26).setCellValue("Fail");
+			
+			FileOutputStream File8=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File8);
+						
+		}
+		
+		By EmployeeIdLocator=By.id("personal_txtEmployeeId");
+		WebElement Actual_EmployeeIdNumber=driver.findElement(EmployeeIdLocator);
+		String Actual_EmployeeIDNumber=Actual_EmployeeIdNumber.getAttribute("value");
+		Row.createCell(27).setCellValue(Actual_EmployeeIDNumber);
+		
+		System.out.println("The Actual Employee Id is :- "+Actual_EmployeeIDNumber);
+		
+		if(Actual_EmployeeIDNumber.equals(AutoUpdatedEmployeeId))
+		{
+			
+			System.out.println("The Employee Id is Matched - Pass");
+			Row.createCell(28).setCellValue("Pass");
+			
+			FileOutputStream File9=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File9);
+			
+		}
+		else
+		{
+			
+			System.out.println("The Employee Id is NOT Matched - Fail");
+			Row.createCell(28).setCellValue("Fail");
+			
+			FileOutputStream File9=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+			WorkBook.write(File9);
+			
+		}
+		
+		By WelcomeL=By.linkText("Welcome Admin");
+		WebElement WelcomeAdmin=driver.findElement(WelcomeL);
+		WelcomeAdmin.click();
+		
+		By LogOutL=By.linkText("Logout");
+		WebElement LogOut=driver.findElement(LogOutL);
+		LogOut.click();
+				
+				
+		WebElement LogInPanel1=driver.findElement(By.id("logInPanelHeading"));
+		
+		String ExpectedLogInPanelTextAfterLogOut=Row.getCell(29).getStringCellValue();
+		System.out.println(ExpectedLogInPanelTextAfterLogOut);
+						
+		String ActualLogInPanelTextAfterLogOut=LogInPanel1.getText();
+		System.out.println("The Text of The Web Element is :- "+ActualLogInPanelTextAfterLogOut);
+		Row.createCell(30).setCellValue(ActualLogInPanelTextAfterLogOut);
+		
+		if(ActualLogInPanelTextAfterLogOut.equals(ExpectedLogInPanelTextAfterLogOut))
+		{
+			
+			System.out.println("LogIn Panel Text After LogOut is Matched - Pass");
+			Row.createCell(31).setCellValue("Pass");
+			
+			FileOutputStream File10=new FileOutputStream("./src/com/ExcelSheets/LogInTest.xlsx");
+			WorkBook.write(File10);
+		}
+		else
+		{
+			
+			System.out.println("LogIn Panel Text After LogOut Not Matched - Fail");
+			Row.createCell(31).setCellValue("Fail");
+			
+			FileOutputStream File10=new FileOutputStream("./src/com/ExcelSheets/LogInTest.xlsx");
+			WorkBook.write(File10);
+			
+		}
+		
+		FileOutputStream File11=new FileOutputStream("./src/com/ExcelSheets/AddEmployee.xlsx");
+		WorkBook.write(File11);
+		
+		
+		
+		//driver.quit();
+		
+		
+	}
+}

@@ -1,0 +1,155 @@
+package com.Assignments;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Kkjhgf 
+{
+
+	public static void main(String[] args) throws IOException, InterruptedException 
+	{
+	
+		String ApplicationUrl="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth/login";
+		WebDriver driver;
+		System.setProperty("webdriver.edge.driver", "./DriverFiles/msedgedriver.exe");
+		driver=new EdgeDriver();
+		driver.get(ApplicationUrl);
+		
+		driver.manage().window().maximize();
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		FileInputStream File= new FileInputStream("./src/com/ExcelSheets/Book1.xlsx");
+		XSSFWorkbook workBook=new XSSFWorkbook(File);
+		XSSFSheet sheet=workBook.getSheet("Sheet1");
+		
+		Row row1=sheet.createRow(1);		
+		
+		String UserNameTestData="VaraLakshmi";
+		By UserNameL=By.id("txtUsername");
+		WebElement UserName=driver.findElement(UserNameL);
+		UserName.sendKeys(UserNameTestData);
+				
+		String PasswordTestData="LovelyVaram@1998";
+		By PasswordL=By.id("txtPassword");
+		WebElement Password=driver.findElement(PasswordL);
+		Password.sendKeys(PasswordTestData);
+		
+		By LogInL=By.className("button");
+		WebElement Login=driver.findElement(LogInL);
+		Login.click();
+		
+		By PIMLocator=By.id("menu_pim_viewPimModule");
+		WebElement PIM=driver.findElement(PIMLocator);
+		
+		Actions action=new Actions(driver);
+		action.moveToElement(PIM).build().perform();
+		
+		By AddEmployeeL=By.linkText("Add Employee");
+		WebDriverWait Wait=new WebDriverWait(driver, 10);
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(AddEmployeeL));
+		
+		WebElement AddEmployee=driver.findElement(AddEmployeeL);
+		AddEmployee.click();
+		
+		
+		String array[][]=new String[5][3];
+		array[0][0]="Kodali";
+		array[0][1]="Rajini ";
+		array[0][2]="Devi";
+		array[1][0]="Kodali";
+		array[1][1]="Vamshi Kumar";
+		array[1][2]="Netha";
+		array[2][0]="Chilikoti";
+		array[2][1]="Sivaji";
+		array[2][2]="Raj";
+		array[3][0]="Chilikoti";
+		array[3][1]="Vara Pasad";
+		array[3][2]="Netha";
+		array[4][0]="Chilikoti";
+		array[4][1]="Sri Ram";
+		array[4][2]="Netha";
+					
+		//14,15,16
+		
+		row1.createCell(14).setCellValue(array[0][0]);
+		row1.createCell(15).setCellValue(array[0][1]);
+		row1.createCell(16).setCellValue(array[0][2]);
+		
+		Row row2=sheet.createRow(2);
+		
+		row2.createCell(14).setCellValue(array[1][0]);
+		row2.createCell(15).setCellValue(array[1][1]);
+		row2.createCell(16).setCellValue(array[1][2]);
+		
+		Row row3=sheet.createRow(3);
+		
+		row3.createCell(14).setCellValue(array[2][0]);
+		row3.createCell(15).setCellValue(array[2][1]);
+		row3.createCell(16).setCellValue(array[2][2]);
+		
+		Row row4=sheet.createRow(4);
+		
+		row4.createCell(14).setCellValue(array[3][0]);
+		row4.createCell(15).setCellValue(array[3][1]);
+		row4.createCell(16).setCellValue(array[3][2]);
+		
+		Row row5=sheet.createRow(5);
+		
+		row5.createCell(14).setCellValue(array[4][0]);
+		row5.createCell(15).setCellValue(array[4][1]);
+		row5.createCell(16).setCellValue(array[4][2]);
+		
+		for (int rowindex=1;rowindex<=sheet.getLastRowNum();rowindex++)
+
+		{
+			for(int rowofcellindex=14;rowofcellindex<15;rowofcellindex++)
+			{
+				Thread.sleep(5000);
+				Row name=sheet.getRow(rowindex);//first row
+				Cell name1=name.getCell(rowofcellindex);
+				String FirstName=name1.getStringCellValue();
+				System.out.println(FirstName);
+				
+				By firstNameL=By.id("firstName");
+				WebElement firstName=driver.findElement(firstNameL);
+				firstName.sendKeys(FirstName);
+				for(int rowofcellindex1=14;rowofcellindex1<16;rowofcellindex1++)
+				{
+					Row middleName=sheet.getRow(rowindex);
+					Cell MN=middleName.getCell(rowofcellindex1);
+					
+					String MN1=MN.getStringCellValue();
+					System.out.println(MN1);
+					
+					By ExpectedMiddleNameL1=By.id("middleName");
+					WebElement MiddleName1=driver.findElement(ExpectedMiddleNameL1);
+					MiddleName1.sendKeys(MN1);
+				}
+			}
+		}
+		
+		
+		FileOutputStream file0=new FileOutputStream("./src/com/ExcelSheets/Book1.xlsx");
+		workBook.write(file0);
+		
+		//driver.quit();
+	
+	}
+}

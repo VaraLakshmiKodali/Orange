@@ -1,0 +1,137 @@
+2023-01-31 15:32:33,494 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-01-31 15:35:11,047 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-01-31 15:40:54,727 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-01-31 15:44:45,067 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-01-31 15:54:38,035 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-01-31 16:12:43,361 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-01-31 16:12:43,908 - Log -INFO - The Actual LogIn Page URL  Matched - Pass
+2023-01-31 19:31:03,702 - Log -INFO - The Actual LogIn Page Title Matched - PASS
+2023-01-31 19:31:03,805 - Log -INFO - The Actual LogIn Page URL  Matched - Pass
+2023-01-31 19:31:09,681 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-01-31 19:31:10,270 - Log -INFO - The Actual LogIn Page URL  Matched - Pass
+2023-02-01 10:35:14,603 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-02-01 10:35:15,421 - Log -INFO - The Actual LogIn Page URL  Matched - Pass
+2023-02-01 10:41:40,516 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-02-01 10:41:42,483 - Log -INFO - The Actual LogIn Page URL  Matched - Pass
+2023-02-01 10:55:00,321 - Log -INFO - Failed navigate to the OrangeHrm Application - PASS
+2023-02-01 11:02:46,112 - Log -INFO - Failed navigate to the OrangeHrm Application - FAIL
+2023-02-01 11:02:46,649 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-02-01 11:05:23,609 - Log -INFO - Failed navigate to the OrangeHrm Application - FAIL
+2023-02-01 11:07:36,018 - Log -INFO - Successfully navigated to the OrangeHrm Application - PASS
+2023-02-01 11:23:52,225 - Log -INFO - Successfully navigated to the OrangeHrm Application - PASS
+2023-02-01 11:27:49,029 - Log -INFO - Successfully navigated to the OrangeHrm Application - PASS
+2023-02-01 11:29:33,049 - Log -INFO - Successfully navigated to the OrangeHrm Application - PASS
+2023-02-01 11:35:54,376 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-02-01 11:38:24,422 - Log -INFO - Successfully navigated to the OrangeHrm Application - PASS
+2023-02-01 11:43:34,928 - Log -INFO - Successfully navigated to the OrangeHrm Application - PASS
+2023-02-01 11:49:42,851 - Log -INFO - Successfully navigated to the OrangeHrm Application - PASS
+2023-02-01 11:49:43,207 - Log -INFO - The Actual LogIn Page Title NOT Matched - FAIL
+2023-02-01 18:54:59,235 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 18:54:59,376 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 18:54:59,393 - Log -INFO - Successfully Validated the OrangeHRM Application Login page URL Address - PASS
+2023-02-01 18:57:05,411 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 18:57:05,455 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 18:57:05,472 - Log -INFO - Successfully Validated the OrangeHRM Application Login page URL Address - PASS
+2023-02-01 19:09:47,548 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 19:09:47,646 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:09:47,665 - Log -INFO - Failed to Validate the OrangeHRM Application Login page URL Address - FAIL
+2023-02-01 19:20:19,342 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 19:20:19,676 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:26:23,839 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 19:26:23,937 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:30:55,275 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 19:30:55,335 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:38:08,628 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 19:38:08,900 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:38:25,862 - Log -INFO - Failed to Navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:38:26,951 - Log -INFO - Failed to Navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:38:27,605 - Log -INFO - Failed to Navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:38:28,217 - Log -INFO - Failed to Navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:38:28,853 - Log -INFO - Failed to Navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:46:10,565 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 19:46:10,618 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:56:01,978 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 19:56:02,039 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 19:56:23,714 - Log -INFO - Successfully Navigated to the OrangeHRM Application - Pass
+2023-02-01 19:56:44,244 - Log -INFO - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+2023-02-01 19:56:48,035 - Log -INFO - Failed to Logout from OrangeHRM Application - FAIL
+2023-02-01 20:01:11,121 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 20:01:11,157 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 20:01:30,545 - Log -INFO - Successfully Navigated to the OrangeHRM Application - Pass
+2023-02-01 20:01:52,812 - Log -INFO - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+2023-02-01 20:01:55,706 - Log -INFO - Failed to Logout from OrangeHRM Application - FAIL
+2023-02-01 20:04:07,861 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 20:04:07,888 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 20:04:23,921 - Log -INFO - Successfully Navigated to the OrangeHRM Application - Pass
+2023-02-01 20:04:24,358 - Log -INFO - Failed to Navigate to Add Employee Page in OrangeHRM Application - FAIL
+2023-02-01 20:04:50,661 - Log -INFO - Failed to Navigate to Add Employee Page in OrangeHRM Application - FAIL
+2023-02-01 20:04:53,881 - Log -INFO - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+2023-02-01 20:04:55,282 - Log -INFO - Failed to Logout from OrangeHRM Application - FAIL
+2023-02-01 20:14:43,057 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 20:14:43,130 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 20:14:59,617 - Log -INFO - Successfully Navigated to the OrangeHRM Application - Pass
+2023-02-01 20:14:59,962 - Log -INFO - Failed to Navigate to Add Employee Page in OrangeHRM Application - FAIL
+2023-02-01 20:15:04,707 - Log -INFO - Failed to Navigate to Add Employee Page in OrangeHRM Application - FAIL
+2023-02-01 20:15:07,692 - Log -INFO - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+2023-02-01 20:15:09,258 - Log -INFO - Failed to Logout from OrangeHRM Application - FAIL
+2023-02-01 20:57:47,459 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 20:57:47,585 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 20:58:10,168 - Log -INFO - Successfully Navigated to the OrangeHRM Application - Pass
+2023-02-01 20:58:42,085 - Log -INFO - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+2023-02-01 20:58:44,815 - Log -INFO - Failed to Logout from OrangeHRM Application - FAIL
+2023-02-01 21:01:41,069 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 21:01:41,187 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 21:01:59,244 - Log -INFO - Successfully Navigated to the OrangeHRM Application - Pass
+2023-02-01 21:02:29,777 - Log -INFO - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+2023-02-01 21:02:34,449 - Log -INFO - Failed to Logout from OrangeHRM Application - FAIL
+2023-02-01 21:20:58,519 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 21:20:58,653 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 21:21:24,748 - Log -INFO - Successfully Navigated to the OrangeHRM Application - Pass
+2023-02-01 21:22:05,833 - Log -INFO - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+2023-02-01 21:22:07,563 - Log -INFO - Failed to Logout from OrangeHRM Application - FAIL
+2023-02-01 21:25:45,360 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 21:25:45,463 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 21:26:06,757 - Log -INFO - Successfully Navigated to the OrangeHRM Application - Pass
+2023-02-01 21:26:15,272 - Log -INFO - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+2023-02-01 21:26:16,636 - Log -INFO - Failed to Logout from OrangeHRM Application - FAIL
+2023-02-01 21:35:55,893 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 21:35:55,970 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 21:37:49,016 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 21:37:49,094 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 21:40:47,768 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 21:40:47,821 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 21:42:54,965 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 21:42:55,080 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-01 21:46:55,096 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-01 21:46:55,175 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 01:37:33,060 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 01:37:33,121 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 01:44:56,691 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 01:44:56,793 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 01:56:35,783 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 01:56:35,984 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 01:56:36,321 - Log -INFO - Admin
+2023-02-02 01:59:50,668 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 01:59:50,766 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 01:59:50,969 - Log -INFO - Admin
+2023-02-02 02:15:20,904 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 02:15:20,992 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 02:15:21,320 - Log -INFO - Admin
+2023-02-02 02:22:59,540 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 02:22:59,671 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 02:22:59,920 - Log -INFO - Admin
+2023-02-02 02:34:46,486 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 02:34:46,511 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 02:35:02,213 - Log -INFO - Admin
+2023-02-02 10:49:36,718 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 10:49:36,832 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 10:49:36,859 - Log -INFO - Successfully Validated the OrangeHRM Application Login page URL Address - PASS
+2023-02-02 10:50:29,808 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 10:50:29,840 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 10:50:29,859 - Log -INFO - Successfully Validated the OrangeHRM Application Login page URL Address - PASS
+2023-02-02 10:57:50,887 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 10:57:51,261 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 10:58:19,501 - Log -INFO - Admin
+2023-02-02 17:35:13,312 - Log -INFO - Successfully navigated to the OrangeHRM Application - PASS
+2023-02-02 17:35:13,392 - Log -INFO - Failed to navigate to the OrangeHRM Application - FAIL
+2023-02-02 17:35:48,750 - Log -INFO - Admin

@@ -1,0 +1,76 @@
+package stepDefinitions;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class OrangeHrmApplicationMethods 
+{
+	public static WebDriver driver;
+	String applicationUrlAddress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/dashboard";
+	
+	
+	@Given("^User should open the chrome browser in the system$")
+	public void user_should_open_the_chrome_browser_in_the_system() 
+	{
+		
+		System.setProperty("webdriver.chrome.driver", "./DriverFiles/chromedriver.exe");
+		driver = new ChromeDriver();
+				
+	}
+
+	@When("^User enters OrangeHrm Application Url Address$")
+	public void user_enters_OrangeHrm_Application_Url_Address()
+	{
+		//Log.info(" Chorme Browser Launched Successfully ");
+
+		driver.manage().deleteAllCookies();
+		driver.get(applicationUrlAddress);
+
+		//Log.info(" Successfully Naviagated to OrangeHRM Application ");
+
+		driver.manage().window().maximize();
+
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+	}
+
+	@Then("^User should be navigated to OrangeHrm Application LogIn Page$")
+	public void user_should_be_navigated_to_OrangeHrm_Application_LogIn_Page()
+	{
+		
+		String ExpectedLogInPageUrl="orangehrm";
+		System.out.println("The Expected LogIn Page Url :- "+ExpectedLogInPageUrl);
+		String ActualLogInPageUrl=driver.getCurrentUrl();
+		
+		System.out.println("The Actual LogIn Page Url :- "+ActualLogInPageUrl);
+		if(ActualLogInPageUrl.contains(ExpectedLogInPageUrl))
+		{
+			
+			System.out.println(" LogIn Page Url Matched - Pass");
+			
+		}
+		else
+		{
+			
+			System.out.println(" LogIn Page Url NOT Matched - Fail");
+						
+		}
+
+	}
+
+	@Then("^User should close the OrangeHrm Application with the browser$")
+	public void user_should_close_the_OrangeHrm_Application_with_the_browser() 
+	{
+	    
+		driver.quit();
+		
+	}
+
+
+}

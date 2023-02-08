@@ -1,0 +1,28 @@
+package com.Utility;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelCommonsMethods 
+{
+	
+	String fileInputPath,fileOutputPath,sheetName;
+	XSSFWorkbook workBook;
+	
+	
+
+	public ExcelCommonsMethods(String fileInputPath,String fileOutputPath, String sheetName) throws IOException
+	{
+		
+		this.fileInputPath=fileInputPath;
+		this.fileOutputPath=fileOutputPath;
+		this.sheetName=sheetName;
+		
+		FileInputStream file=new FileInputStream(fileInputPath);
+		workBook=new XSSFWorkbook(file);
+		
+	}
+}

@@ -1,0 +1,387 @@
+package com.OrangeHrmApplicationTestCases;
+
+import java.io.IOException;
+import java.util.Properties;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+import com.OrangeHrmApplication.BaseTest;
+import com.Utility.ExcelCommonMethods;
+import com.Utility.Log;
+import com.Utility.OrangeHrmProperty;
+
+public class AddEmployeeTest extends BaseTest
+{
+
+	Properties property;
+	String excelFileInputPath="./src/main/java/com/OrangeHrmApplicationTestDataFiles/AddEmployee.xlsx";
+	String excelFileOutputPath="./src/main/java/com/OrangeHrmApplicationTestDataResultsFiles/AddEmployeeTestResultsFile.xlsx";
+	String SheetName="Sheet1";
+	ExcelCommonMethods excelFile;
+	
+	@Test(priority=1,description="validating login Page-LOGIN Panel Text")
+	public void validateLoginPageTest() throws IOException {
+		
+		excelFile=new ExcelCommonMethods(excelFileInputPath, excelFileOutputPath, SheetName);
+		property=OrangeHrmProperty.loadProperty();
+		
+		By loginPageLoginPanelTextLocator=By.id(property.getProperty("logInPageLogInPanelProperty"));
+		String actual_loginPageLoginPanelText=driver.findElement(loginPageLoginPanelTextLocator).getText();
+		excelFile.setCellValue(1, 1, actual_loginPageLoginPanelText);
+		String expected_loginPageLoginPanelText=excelFile.getCellValue(1, 0);
+		
+		if(actual_loginPageLoginPanelText.equals(expected_loginPageLoginPanelText))
+		{
+			Log.info("Successfully navigated to the OrangeHRM Application - PASS");
+			excelFile.setCellValue(1, 2, "Successfully navigated to the OrangeHRM Application - PASS" );
+		}
+		else
+		{
+			Log.info("Failed to navigate to the OrangeHRM Application - FAIL");
+			excelFile.setCellValue(1, 2, "Failed to navigate to the OrangeHRM Application - FAIL" );
+		}
+		
+		String actual_loginPageTitle=driver.getTitle();
+		excelFile.setCellValue(1, 4, actual_loginPageTitle);
+		String expected_loginPageTitle=excelFile.getCellValue(1, 3);
+		
+		if(actual_loginPageTitle.equals(expected_loginPageTitle))
+		{
+			Log.info("Successfully Validated the OrangeHRM Application Login page Title - PASS");
+			excelFile.setCellValue(1, 5, "Successfully Validated the OrangeHRM Application Login page Title - PASS" );
+		}
+		else
+		{
+			Log.info("Failed to navigate to the OrangeHRM Application - FAIL");
+			excelFile.setCellValue(1, 5, "Failed to navigate to the OrangeHRM Application - FAIL" );
+		}
+	
+	}
+	
+	@Test(priority=2,description="OrangeHRM Application Login Functionality Test")
+	public void validateLoginFunctionalityTest() throws IOException 
+	{
+		String usernamedata="VaraLakshmi";
+		excelFile.setCellValue(1, 6, usernamedata);
+		String passworddata="LovelyVaram@1998";
+		excelFile.setCellValue(1, 7, passworddata);
+		excelFile.saveExcelData();
+				
+	}
+	
+	@Test(priority=3)
+	private void validateHomePage() throws IOException 
+	{
+		String ExpectedHomePageText=excelFile.getCellValue(1, 8);
+		Log.info(ExpectedHomePageText);
+		
+		By HomePageTextL=By.linkText(property.getProperty("adminProperty"));
+		WebElement HomePageText=driver.findElement(HomePageTextL);
+		String ActualHomePageText=HomePageText.getText();
+		Log.info(ActualHomePageText);
+		excelFile.setCellValue(1, 9, ActualHomePageText);
+		
+		if(ActualHomePageText.contains(ExpectedHomePageText))
+		{
+			
+			Log.info("Successfully Navigated to OrangeHrm Application HomePage - PASS");
+			excelFile.setCellValue(1, 10, "Successfully Navigated to OrangeHrm Application HomePage - PASS");
+			
+		}
+		else
+		{
+			
+			Log.info("Failed Navigate to OrangeHrm Application HomePage - Fail");
+			excelFile.setCellValue(1, 10, "Failed Navigated to OrangeHrm Application HomePage - Fail");
+									
+		}
+
+	}
+	@Test(priority = 4)
+	private void SendingDataToExcel() throws IOException 
+	{
+			
+		String array[][]=new String[5][3];
+		array[0][0]="Kodali";
+		array[0][1]="Rajini";
+		array[0][2]="Devi";
+		array[1][0]="Kodali";
+		array[1][1]="Vamshi Kumar";
+		array[1][2]="Netha";
+		array[2][0]="Chilikoti";
+		array[2][1]="Sivaji";
+		array[2][2]="Raj";
+		array[3][0]="Chilikoti";
+		array[3][1]="Vara Pasad";
+		array[3][2]="Netha";
+		array[4][0]="Chilikoti";
+		array[4][1]="Sri Ram";
+		array[4][2]="Netha";
+		for(int i=14;i<15;i++)
+		{
+	
+			excelFile.setCellValue(i, 14, array[0][0]);
+			excelFile.setCellValue(i, 14, array[1][0]);
+			excelFile.setCellValue(i, 14, array[2][0]);
+			
+			for(int j=15;j<16;j++)
+			{
+			
+			excelFile.setCellValue(j, 15, array[0][1]);
+			excelFile.setCellValue(j, 15, array[1][1]);
+			excelFile.setCellValue(j, 15, array[2][1]);
+			
+				for(int k=16;k<17;k++)
+				{
+			
+					excelFile.setCellValue(k, 16, array[0][2]);
+					excelFile.setCellValue(k, 16, array[1][2]);
+					excelFile.setCellValue(k, 16, array[2][2]);
+				
+				}
+				
+			}
+			
+		}
+		
+		excelFile.saveExcelData();
+		
+	}
+	
+	@Test(priority = 5)
+
+	private void pim()
+	{
+		
+		By pimlocator=By.id(property.getProperty("PIMProperty"));
+		WebElement pim=driver.findElement(pimlocator);
+		pim.click();
+		
+		By AddEmployeeL1=By.id(property.getProperty("AddEmployeeProperty"));
+		WebDriverWait Wait1=new WebDriverWait(driver, 10);
+		Wait1.until(ExpectedConditions.visibilityOfElementLocated(AddEmployeeL1));
+		
+		WebElement AddEmployee=driver.findElement(AddEmployeeL1);
+		AddEmployee.click();
+		
+		Actions action=new Actions(driver);
+		action.moveToElement(AddEmployee).build().perform();
+		
+	}
+	
+
+	@Test(priority=3,description="AddEmployee Functionality Test")
+	public void AddEmployeeFunctionalityTest() throws IOException, InterruptedException 
+	{
+		
+		for (int rowindex=1;rowindex<=5;rowindex++)
+		{
+			
+			for(int rowofcellindex=14;rowofcellindex<15;rowofcellindex++)
+			{
+				Thread.sleep(5000);
+				By AddEmployeeL=By.id(property.getProperty("AddEmployeeProperty"));
+				WebDriverWait Wait=new WebDriverWait(driver, 10);
+				Wait.until(ExpectedConditions.visibilityOfElementLocated(AddEmployeeL));
+				
+				WebElement AddEmployee=driver.findElement(AddEmployeeL);
+				AddEmployee.click();
+				
+				String firstName=excelFile.getCellValue(rowindex, rowofcellindex);
+								
+				By firstNameL=By.id(property.getProperty("FirstNameProperty"));
+				WebElement FirstName=driver.findElement(firstNameL);
+				FirstName.sendKeys(firstName);
+				
+				for(int rowofcellindex1=15;rowofcellindex1<16;rowofcellindex1++)
+				{
+					
+					String middleName=excelFile.getCellValue(rowindex, rowofcellindex1);
+					
+					By ExpectedMiddleNameL1=By.id(property.getProperty("MiddleNameProperty"));
+					WebElement MiddleName1=driver.findElement(ExpectedMiddleNameL1);
+					MiddleName1.sendKeys(middleName);
+					
+					for(int index2=16;index2<17;index2++)
+					{
+						String lastName=excelFile.getCellValue(rowindex, rowofcellindex1);
+												
+						By LastNameL1=By.id(property.getProperty("LastNameProperty"));
+						WebElement LastName1=driver.findElement(LastNameL1);
+						LastName1.sendKeys(lastName);
+						
+						By EmployeeIdL1=By.id(property.getProperty("AutoGeneraatedEmployeeIdProperty"));
+						WebElement EmployeeID1=driver.findElement(EmployeeIdL1);
+						String AutoUpdatedEmployeeId1=EmployeeID1.getAttribute("value");
+						excelFile.setCellValue(rowindex, 17, AutoUpdatedEmployeeId1);
+						By SaveL=By.id(property.getProperty("SaveButtonProperty"));
+						WebElement Save=driver.findElement(SaveL);
+						Save.click();		
+						
+						String ExpectedPersonalDetailsPageText=excelFile.getCellValue(1, 18);
+						Log.info(ExpectedPersonalDetailsPageText);
+						excelFile.setCellValue(rowindex, 18, ExpectedPersonalDetailsPageText);
+						
+						By ActualPersonalDetailsPageL=By.className(property.getProperty("PersonalDetailsPageTextProperty"));
+						WebElement PersonalDetailsPage=driver.findElement(ActualPersonalDetailsPageL);
+						
+						String ActualPersonalDetailsPageText=PersonalDetailsPage.getText();
+						excelFile.setCellValue(rowindex, 19, AutoUpdatedEmployeeId1);
+						Log.info(ActualPersonalDetailsPageText);
+						
+						if(ActualPersonalDetailsPageText.equals(ExpectedPersonalDetailsPageText))
+						{
+							
+							Log.info("Pass");
+							excelFile.setCellValue(rowindex, 20, "Pass");
+						}
+						else
+						{
+							
+							Log.info("Fail");
+							excelFile.setCellValue(rowindex, 20, "Fail");
+														
+						}
+					
+						String ExpectedFN=excelFile.getCellValue(rowindex, 14);
+						Log.info(ExpectedFN);
+						
+						By FNL=By.id(property.getProperty("PersonalDetailsPageFullNameProperty") );
+						WebElement AFN=driver.findElement(FNL);
+						
+						String ActualFirstNameText=AFN.getAttribute("value");
+						excelFile.setCellValue(rowindex, 21, ActualFirstNameText);
+						Log.info(ActualFirstNameText);
+						
+						if(ActualFirstNameText.equals(ExpectedFN))
+						{
+							
+							Log.info("Pass");
+							excelFile.setCellValue(rowindex, 22, "Pass");							
+						}
+						else
+						{
+							
+							Log.info("Fail");
+							excelFile.setCellValue(rowindex, 22, "Fail");							
+						}
+						
+						String ExpectedMN=excelFile.getCellValue(rowindex, 15);
+						Log.info(ExpectedMN);
+						
+						By MNL=By.id(property.getProperty("PersonalDetailsPageMiddleNameProperty") );
+						WebElement AMN=driver.findElement(MNL);
+						
+						String ActualMiddleNameText=AMN.getAttribute("value");
+						excelFile.setCellValue(rowindex, 23, ActualMiddleNameText);
+						Log.info(ActualMiddleNameText);
+						
+						if(ActualMiddleNameText.equals(ExpectedMN))
+						{
+							
+							Log.info("Pass");
+							excelFile.setCellValue(rowindex, 24, "Pass");
+							
+						}
+						else
+						{
+							
+							Log.info("Fail");
+							excelFile.setCellValue(rowindex, 24, "FAIL");
+							
+						}
+						
+						String ExpectedLN=excelFile.getCellValue(rowindex, 16);
+						Log.info(ExpectedLN);
+						
+						By LNL=By.id(property.getProperty("PersonalDetailsPageLastNameProperty") );
+						WebElement ALN=driver.findElement(LNL);
+						
+						String ActualLastNameText=ALN.getAttribute("value");
+						excelFile.setCellValue(rowindex, 25, ActualLastNameText);
+						
+						Log.info(ActualLastNameText);
+						
+						if(ActualLastNameText.equals(ExpectedLN))
+						{
+							
+							Log.info("Pass");
+							excelFile.setCellValue(rowindex, 26, "PASS");
+							
+						}
+						else
+						{
+							
+							Log.info("Fail");
+							excelFile.setCellValue(rowindex, 26, "FAIL");
+							
+						}
+						
+						String ExpectedEmpId=excelFile.getCellValue(rowindex, 17);
+						Log.info(ExpectedEmpId);
+						
+						By EmpIdL=By.id(property.getProperty("PersonalDetailsPageEmployeeIdProperty") );
+						WebElement EmpId=driver.findElement(EmpIdL);
+						
+						String ActualEmpId=EmpId.getAttribute("value");
+						excelFile.setCellValue(rowindex, 27, AutoUpdatedEmployeeId1);
+						Log.info(ActualEmpId);
+						
+						if(ActualEmpId.equals(ExpectedEmpId))
+						{
+							
+							Log.info("Pass");
+							excelFile.setCellValue(rowindex, 28, "PASS");
+							
+						}
+						else
+						{
+							
+							Log.info("Fail");
+							excelFile.setCellValue(rowindex, 28, "Fail");
+														
+						}
+																	
+					}
+									
+				}
+				
+			}
+					
+		}
+		excelFile.saveExcelData();
+	}		
+
+
+	/*
+	
+		
+	@Test(priority=5)
+		private void Logout() throws IOException 
+		{
+			
+			By HomePageWelcomeAdminLocator=By.id(property.getProperty("welcomeAdminProperty"));
+			driver.findElement(HomePageWelcomeAdminLocator).click();
+			By homePageLogoutElementLocator=By.linkText(property.getProperty("logOutProperty"));
+			driver.findElement(homePageLogoutElementLocator).click();
+			
+			By loginPageLoginPanelTextLocator=By.id(property.getProperty("logInPageLogInPanelProperty"));
+			String actual_loginPageLoginPanelTextAfterLogout=driver.findElement(loginPageLoginPanelTextLocator).getText();
+			excelFile.setCellValue(1, 31, actual_loginPageLoginPanelTextAfterLogout);
+			String expected_loginPageLoginPanelTextAfterLogout=excelFile.getCellValue(1, 30);
+			if(actual_loginPageLoginPanelTextAfterLogout.equals(expected_loginPageLoginPanelTextAfterLogout))
+			{
+				Log.info("Successfully Logout from the OrangeHRM Application - PASS");
+				excelFile.setCellValue(1, 32, "Successfully Logout from the OrangeHRM Application - PASS" );
+			}
+			else
+			{
+				Log.info("Failed to Logout from OrangeHRM Application - FAIL");
+				excelFile.setCellValue(1, 32, "Failed to Logout from OrangeHRM Application - FAIL" );
+			}
+			
+		}*/
+}

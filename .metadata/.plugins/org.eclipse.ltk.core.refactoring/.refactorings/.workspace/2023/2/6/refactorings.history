@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;OrangeHrmApplicationPOM&apos;" deleteContents="false" description="Delete resource &apos;OrangeHrmApplicationPOM&apos;" element1="/OrangeHrmApplicationPOM" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1675602596654"/>&#x0A;<refactoring comment="Copy 0 elements to &apos;OrangeHrm_POM&apos;&#x0D;&#x0A;- Destination element: &apos;OrangeHrm_POM&apos;" description="Copy compilation units" destination="=OrangeHrm_POM" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1675603341842" units="0" version="1.0"/>
+</session>

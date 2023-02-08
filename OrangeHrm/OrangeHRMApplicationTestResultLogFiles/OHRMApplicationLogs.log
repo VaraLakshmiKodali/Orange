@@ -1,0 +1,137 @@
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - The Actual LogIn Page URL  Matched - Pass
+[main] INFO Log - The Actual LogIn Page Title Matched - PASS
+[main] INFO Log - The Actual LogIn Page URL  Matched - Pass
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - The Actual LogIn Page URL  Matched - Pass
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - The Actual LogIn Page URL  Matched - Pass
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - The Actual LogIn Page URL  Matched - Pass
+[main] INFO Log - Failed navigate to the OrangeHrm Application - PASS
+[main] INFO Log - Failed navigate to the OrangeHrm Application - FAIL
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - Failed navigate to the OrangeHrm Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHrm Application - PASS
+[main] INFO Log - Successfully navigated to the OrangeHrm Application - PASS
+[main] INFO Log - Successfully navigated to the OrangeHrm Application - PASS
+[main] INFO Log - Successfully navigated to the OrangeHrm Application - PASS
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHrm Application - PASS
+[main] INFO Log - Successfully navigated to the OrangeHrm Application - PASS
+[main] INFO Log - Successfully navigated to the OrangeHrm Application - PASS
+[main] INFO Log - The Actual LogIn Page Title NOT Matched - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Validated the OrangeHRM Application Login page URL Address - PASS
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Validated the OrangeHRM Application Login page URL Address - PASS
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Failed to Validate the OrangeHRM Application Login page URL Address - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Failed to Navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Failed to Navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Failed to Navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Failed to Navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Failed to Navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application - Pass
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+[main] INFO Log - Failed to Logout from OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application - Pass
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+[main] INFO Log - Failed to Logout from OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application - Pass
+[main] INFO Log - Failed to Navigate to Add Employee Page in OrangeHRM Application - FAIL
+[main] INFO Log - Failed to Navigate to Add Employee Page in OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+[main] INFO Log - Failed to Logout from OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application - Pass
+[main] INFO Log - Failed to Navigate to Add Employee Page in OrangeHRM Application - FAIL
+[main] INFO Log - Failed to Navigate to Add Employee Page in OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+[main] INFO Log - Failed to Logout from OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application - Pass
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+[main] INFO Log - Failed to Logout from OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application - Pass
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+[main] INFO Log - Failed to Logout from OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application - Pass
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+[main] INFO Log - Failed to Logout from OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application - Pass
+[main] INFO Log - Successfully Navigated to the OrangeHRM Application HomePage - Pass
+[main] INFO Log - Failed to Logout from OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Admin
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Admin
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Admin
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Admin
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Admin
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Validated the OrangeHRM Application Login page URL Address - PASS
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Successfully Validated the OrangeHRM Application Login page URL Address - PASS
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Admin
+[main] INFO Log - Successfully navigated to the OrangeHRM Application - PASS
+[main] INFO Log - Failed to navigate to the OrangeHRM Application - FAIL
+[main] INFO Log - Admin

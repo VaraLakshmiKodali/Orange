@@ -1,0 +1,129 @@
+package com.OrangeHrmApplicationTestCases;
+
+import java.io.IOException;
+import java.util.Properties;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+import com.OrangeHrmApplication.BaseTest;
+import com.Utility.ExcelCommonMethods;
+import com.Utility.Log;
+import com.Utility.OrangeHrmProperty;
+import com.Utility.OrangeHrmScreenShots;
+
+public class LogInFunctionalityTest extends BaseTest
+{
+	
+	Properties property;
+	String excelInputPath="./src/main/java/com/OrangeHrmApplicationTestDataFiles/LogInTest.xlsx";
+	String excelOutputPath="./src/main/java/com/OrangeHrmApplicationTestDataResultsFiles/LogInTestResultFile.xlsx";
+	String sheetName="Sheet1";
+	ExcelCommonMethods excelFile;
+	
+	@Test(priority = 1, description = "Validating LogInPage - LogInPageTest")
+	public void ValidatingLogInPageTest() throws IOException
+	{
+		
+		excelFile=new ExcelCommonMethods(excelInputPath, excelOutputPath, sheetName);
+		property=OrangeHrmProperty.loadProperty();
+		
+		By LogInPageLogInPanelTextLocator=By.id("logInPanelHeading");
+		
+		String actualLogInPageLogInPanelText=driver.findElement(LogInPageLogInPanelTextLocator).getText();
+		
+		excelFile.setCellValue(1, 1, actualLogInPageLogInPanelText);
+		
+		String expectedLogInPageLogInPanelText=excelFile.getCellValue(1, 0);
+		
+		if(actualLogInPageLogInPanelText.equals(expectedLogInPageLogInPanelText))
+		{
+			
+			Log.info("Successfully navigated to the OrangeHrm Application - PASS");
+			excelFile.setCellValue(1, 2, "Successfully navigated to the OrangeHrm Application - PASS");
+			
+		}
+		else
+		{
+			
+			Log.info("Failed navigate to the OrangeHrm Application - FAIL");
+			excelFile.setCellValue(1, 2, "Failed navigate to the OrangeHrm Application - FAIL");
+		
+			OrangeHrmScreenShots.takeScreenShot(driver, "errorToNavigateToOrangeHrmApplication");
+						
+		}	
+	}
+	
+	
+	@Test(priority = 2, description = "OrangeHrmAppliction LogIn Page Title Validation Test")
+	public void logInPageTitleValidation() throws IOException
+	{
+		
+		String actualLogInPageTitle=driver.getTitle();
+		excelFile.setCellValue(1, 4, actualLogInPageTitle);
+		String expectedLogInPageTitle=excelFile.getCellValue(1, 3);
+		if(actualLogInPageTitle.equals(expectedLogInPageTitle))
+		{
+			
+			Log.info("The Actual LogIn Page Title Matched - PASS");
+			excelFile.setCellValue(1, 5, "The Actual LogIn Page Title Matched - PASS");
+			
+		}
+		else
+		{
+			
+			Log.info("The Actual LogIn Page Title NOT Matched - FAIL");
+			excelFile.setCellValue(1, 5, "The Actual LogIn Page Title NOT Matched - FAIL");
+			
+			OrangeHrmScreenShots.takeScreenShot(driver, "errorToNavigateToOrangeHrmApplication");
+			
+		}
+			excelFile.saveExcelData();
+		
+	}
+	
+	@Test(priority = 3, description = "Validating OrangeHrm Application Url Address")
+	public void logInPageUrlValidationTest() throws IOException
+	{
+		
+		String actualLogInPageUrl=driver.getCurrentUrl();
+		excelFile.setCellValue(1, 7, actualLogInPageUrl);
+		
+		String expectedLogInPageUrl=excelFile.getCellValue(1, 6);
+		if(actualLogInPageUrl.contains(expectedLogInPageUrl))
+		{
+			
+			Log.info("The Actual LogIn Page URL  Matched - Pass");
+			excelFile.setCellValue(1, 8, "The Actual LogIn Page URL  Matched - PASS");
+			
+		}
+		else
+		{
+			
+			Log.info("The Actual LogIn Page URL NOT Matched - FAIL");
+			excelFile.setCellValue(1, 8, "The Actual LogIn Page URL NOT Matched - FAIL");
+			
+			OrangeHrmScreenShots.takeScreenShot(driver, "errorToNavigateToOrangeHrmApplication");
+			
+		}
+		excelFile.saveExcelData();
+	}
+	
+	@Test(priority = 4, description = "Sending Data Into The Excel Sheet Using MultipleTestData")
+	public void sendingDataToExcel()
+	{
+		
+		String array[][]=new String[4][2];
+		
+		array[0][0]="Mukesh";
+		array[0][1]="Mukesh@1234";
+		array[1][0]="Naveen";
+		array[1][1]="LovelyVaram@1998";
+		array[2][0]="VaraLakshmi";
+		array[2][1]="Jashwanth";
+		array[3][0]="VaraLakshmi";
+		array[3][1]="LovelyVaram@1998";
+		
+			
+	}
+	
+}

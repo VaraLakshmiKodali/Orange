@@ -1,0 +1,16 @@
+package com.Utility;
+
+public class ExcelCommonsMethods 
+{
+	
+	String fileInputPath,fileOutputPath,sheetName;
+	
+	
+
+	public ExcelCommonsMethods(String fileInputPath,String fileOutputPath, String sheetName)
+	{
+		
+		
+		
+	}
+}

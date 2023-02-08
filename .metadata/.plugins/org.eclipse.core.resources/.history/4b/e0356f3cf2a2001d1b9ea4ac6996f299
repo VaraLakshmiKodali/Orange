@@ -1,0 +1,56 @@
+package com.Utility;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelCommonMethods 
+{
+	
+	String excelFileInputPath;
+	String excelFileOutputPath;
+	String SheetName;
+	XSSFWorkbook workBook;
+	public Row row;
+
+	//When the class name is similar to method name - it is a constructor
+
+	public ExcelCommonMethods(String excelFileInputpath, String excelFileOutputPath, String SheetName) throws IOException
+	{
+	this.excelFileInputPath=excelFileInputpath;
+	this.excelFileOutputPath=excelFileOutputPath;
+	this.SheetName=SheetName;
+	FileInputStream file=new FileInputStream(excelFileInputpath);
+	workBook=new XSSFWorkbook(file);
+	}
+	public String getCellValue(int rowIndex, int cellIndex)
+	{
+	XSSFSheet Sheet=workBook.getSheet(SheetName);
+	row=Sheet.getRow(rowIndex);
+	Cell rowOfCell=row.getCell(cellIndex);
+	return rowOfCell.getStringCellValue();
+
+	}
+	public void setCellValue(int rowIndex, int cellIndex, String data) throws IOException
+	{
+
+	XSSFSheet Sheet=workBook.getSheet(SheetName);
+	Row row=Sheet.getRow(rowIndex);
+	Cell rowOfCell=row.createCell(cellIndex);
+	rowOfCell.setCellValue(data);
+	
+	}
+	public void saveExcelData() throws IOException
+	{
+
+	FileOutputStream OutputStreamTestResultFile=new FileOutputStream(excelFileOutputPath);
+	workBook.write(OutputStreamTestResultFile);
+
+	}
+
+		
+}

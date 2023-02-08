@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [OgangeHrm Application]">
+  <test thread-count="5" parallel="tests" name="OrangeHrm Application AddEmployee(failed)">
+    <classes>
+      <class name="com.OrangeHrmApplicationTestCases.OHrmAddEmployee">
+        <methods>
+          <include name="logInWithValidData"/>
+          <include name="validatingHomePageText"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="logOut"/>
+          <include name="addEmployeePageTextValidation"/>
+          <include name="validatingTheData"/>
+        </methods>
+      </class> <!-- com.OrangeHrmApplicationTestCases.OHrmAddEmployee -->
+    </classes>
+  </test> <!-- OrangeHrm Application AddEmployee(failed) -->
+</suite> <!-- Failed suite [OgangeHrm Application] -->
